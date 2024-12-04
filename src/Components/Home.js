@@ -8,11 +8,16 @@ export default function Home() {
 
     
 
-    const { setTheme } = useContext(ThemeContext);
+    const { setTheme, setDifficulty } = useContext(ThemeContext);
 
     const changeTheme = (x) => {
         setTheme(x)
     };
+
+    const changeDifficulty = (x) => {
+        setDifficulty(x)
+    };
+
 
 
     return (
@@ -27,7 +32,6 @@ export default function Home() {
                     <div>
                         <button >Choose difficulty</button>
                     </div>
-                    {/* <p>{JSON.stringify(icons)}</p> */}
                 </div>
             </div>
             <button>

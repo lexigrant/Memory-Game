@@ -17,7 +17,9 @@ const themeDictionary = {
 }
 
 export function ThemeArrayProvider({ children }) {
-    const [theme, setTheme] = useState(undefined);
+    const [theme, setTheme] = useState("halloween");
+    const [gameDifficulty, setGameDifficulty] = useState("easy");
+
 
     const ctx = useMemo(() => {
         const { themeClassName, icons } = themeDictionary[theme] ?? {}
@@ -25,10 +27,12 @@ export function ThemeArrayProvider({ children }) {
             theme,
             themeClassName,
             icons,
-            setTheme
+            setTheme,
+            gameDifficulty,
+            setGameDifficulty
         }
 
-    }, [theme, setTheme])
+    }, [theme, setTheme, gameDifficulty, setGameDifficulty])
 
 
     return (
