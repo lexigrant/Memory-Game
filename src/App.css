@@ -16,7 +16,50 @@
   background-size: auto;
 }
 
-.card {
-  height: 200rem;
-  width: 10rem;
+.card-grid {
+  display: grid;
+  justify-content: center;
+  grid-gap: 5%;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin: 50px 10px 20px 45px;
+  padding: 30px;
 }
+
+.card {
+  display: flex;
+  flex-direction: row;
+  height: 200px;
+  width: 150px;
+  transform-style: preserve-3d;
+  transition: 150ms;
+}
+
+.card:hover {
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+  opacity: 1;
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+.card .front {
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.card .front,
+.card .back {
+  backface-visibility: hidden;
+}
+
+.card .back {
+  background: gray;
+  transform: rotateY(180deg);
+}
+
+
+
